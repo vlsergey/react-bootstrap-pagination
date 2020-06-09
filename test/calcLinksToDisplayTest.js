@@ -38,6 +38,6 @@ describe( 'calcLinksToDisplay', () => {
       calcLinksToDisplay( 5, 2/* 3rd*/, 0, 1, -1 ) );
     assert.deepEqual( [ -1, 7, -1 ],
       calcLinksToDisplay( 10, 7/* 3rd*/, 0, 0, -1 ) );
-  });
+  } );
 
 } );

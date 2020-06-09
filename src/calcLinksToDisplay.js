@@ -21,10 +21,8 @@ export default function calcLinksToDisplay(
     const lastInLinks : number = result[ result.length - 1 ];
     if ( lastInLinks < Math.max( currentPage - aroundCurrent, 0 ) - 1 )
       result.push( ellipsisMark );
-  } else {
-    if ( 0 < Math.max( currentPage - aroundCurrent, 0 ) )
-      result.push( ellipsisMark );
-  }
+  } else if ( Math.max( currentPage - aroundCurrent, 0 ) > 0 )
+    result.push( ellipsisMark );
 
   for ( let page = Math.max( currentPage - aroundCurrent, 0 );
     page <= Math.min( currentPage + aroundCurrent, totalPages - 1 );

@@ -85,7 +85,7 @@ export default class PaginationWrapper extends PureComponent<PropsType> {
         ? <Pagination.Last disabled key={'+2'} />
         : <Pagination.Last key={'+2'} onClick={this.handleClickF( totalPages - 1 )} />
       )}
-  </Pagination>;
+    </Pagination>;
   }
 
 }
