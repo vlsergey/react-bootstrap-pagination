@@ -1,0 +1,5 @@
+[ignore]
+
+[lints]
+untyped-import=off
+unclear-type=off
