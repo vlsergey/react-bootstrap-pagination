@@ -75,24 +75,21 @@ class MyComponent extends PureComponent {
 ```
 
 # Examples
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
 ```jsx
 <Pagination value={7} totalPages={15} />
 ```
-<ul class="pagination"><li class="page-item"><a class="page-link" role="button" href="#"><span aria-hidden="true">«</span><span class="sr-only">First</span></a></li><li class="page-item"><a class="page-link" role="button" href="#"><span aria-hidden="true">‹</span><span class="sr-only">Previous</span></a></li><li class="page-item"><a class="page-link" href="#" role="button">1</a></li><li class="page-item"><a class="page-link" href="#" role="button">2</a></li><li class="page-item disabled"><span class="page-link" disabled=""><span aria-hidden="true">…</span><span class="sr-only">More</span></span></li><li class="page-item"><a class="page-link" href="#" role="button">7</a></li><li class="page-item active"><span class="page-link">8<span class="sr-only">(current)</span></span></li><li class="page-item"><a class="page-link" href="#" role="button">9</a></li><li class="page-item disabled"><span class="page-link" disabled=""><span aria-hidden="true">…</span><span class="sr-only">More</span></span></li><li class="page-item"><a class="page-link" href="#" role="button">14</a></li><li class="page-item"><a class="page-link" href="#" role="button">15</a></li><li class="page-item"><a class="page-link" role="button" href="#"><span aria-hidden="true">›</span><span class="sr-only">Next</span></a></li><li class="page-item"><a class="page-link" role="button" href="#"><span aria-hidden="true">»</span><span class="sr-only">Last</span></a></li></ul>
+![](https://raw.githubusercontent.com/vlsergey/react-bootstrap-pagination/master/doc-images/8of15std.png)
 
 ```jsx
 <Pagination aroundCurrent={3} showFirstLast={false} showPrevNext={false} atBeginEnd={0} value={7} totalPages={15} />
 ```
 
-<ul class="pagination"><li class="page-item disabled"><span class="page-link" disabled=""><span aria-hidden="true">…</span><span class="sr-only">More</span></span></li><li class="page-item"><a class="page-link" href="#" role="button">5</a></li><li class="page-item"><a class="page-link" href="#" role="button">6</a></li><li class="page-item"><a class="page-link" href="#" role="button">7</a></li><li class="page-item active"><span class="page-link">8<span class="sr-only">(current)</span></span></li><li class="page-item"><a class="page-link" href="#" role="button">9</a></li><li class="page-item"><a class="page-link" href="#" role="button">10</a></li><li class="page-item"><a class="page-link" href="#" role="button">11</a></li><li class="page-item disabled"><span class="page-link" disabled=""><span aria-hidden="true">…</span><span class="sr-only">More</span></span></li></ul>
+![](https://raw.githubusercontent.com/vlsergey/react-bootstrap-pagination/master/doc-images/8of15noFLs.png)
 
 ```jsx
 <Pagination showFirstLast={false} showPrevNext={false} value={1} totalPages={3} disabled size="sm" />
 ```
-<ul class="pagination pagination-sm"><li class="page-item disabled"><span class="page-link" disabled="">1</span></li><li class="page-item active"><span class="page-link">2<span class="sr-only">(current)</span></span></li><li class="page-item disabled"><span class="page-link" disabled="">3</span></li></ul>
-
+![](https://raw.githubusercontent.com/vlsergey/react-bootstrap-pagination/master/doc-images/2of3readOnly.png)
 
 [npm-image]: https://img.shields.io/npm/v/@vlsergey/react-bootstrap-pagination.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@vlsergey/react-bootstrap-pagination
