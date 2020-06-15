@@ -1,6 +1,6 @@
 {
   "name": "@vlsergey/react-bootstrap-pagination",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "browserslist": "defaults, not dead",
   "description": "Ready-to-use wrapper for react-bootstrap Pagation component",
   "main": "src/index.js",
