@@ -3,28 +3,9 @@
 import React, { PureComponent } from 'react';
 import calcLinksToDisplay from './calcLinksToDisplay';
 import Pagination from 'react-bootstrap/Pagination';
+import type { PropsType } from './PropsType';
 
 const ELLIPSIS_MARK : number = -1;
-
-type OnChangeEventType = {
-  target : {
-    name : string,
-    value : number,
-  },
-};
-
-type PropsType = {
-  aroundCurrent : number,
-  atBeginEnd : number,
-  disabled? : ?boolean,
-  name : string,
-  onChange? : ?( OnChangeEventType => any ),
-  readOnly? : ?boolean,
-  showFirstLast : boolean,
-  showPrevNext : boolean,
-  totalPages : number,
-  value : number,
-};
 
 export default class PaginationWrapper extends PureComponent<PropsType> {
 
