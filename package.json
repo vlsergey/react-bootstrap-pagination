@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "browserslist": "defaults, not dead",
   "description": "Ready-to-use wrapper for react-bootstrap Pagation component",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production babel -d lib src && flow-copy-source -v src lib",
     "flow:check": "flow check",
