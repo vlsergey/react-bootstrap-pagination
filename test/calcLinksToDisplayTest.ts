@@ -1,6 +1,6 @@
 // @flow
 
-import assert from 'assert';
+import { assert } from 'chai';
 import calcLinksToDisplay from '../src/calcLinksToDisplay';
 
 describe( 'calcLinksToDisplay', () => {

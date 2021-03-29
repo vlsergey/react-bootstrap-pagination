@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["dom", "es5", "es6"],
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "./lib/",
+    "target": "es5"
+  },
+  "include": [".eslintrc.js", "karma.conf.js"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

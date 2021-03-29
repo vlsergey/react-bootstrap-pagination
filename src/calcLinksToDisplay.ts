@@ -1,5 +1,3 @@
-// @flow
-
 export default function calcLinksToDisplay(
     totalPages : number,
     currentPage : number,

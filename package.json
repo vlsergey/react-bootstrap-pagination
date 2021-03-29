@@ -1,19 +1,20 @@
 {
   "name": "@vlsergey/react-bootstrap-pagination",
-  "version": "1.0.1",
-  "browserslist": "defaults, not dead",
+  "version": "2.0.0-SNAPSHOT",
   "description": "Ready-to-use wrapper for react-bootstrap Pagation component",
   "main": "lib/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production babel -d lib src && flow-copy-source -v src lib",
+    "clean": "rimraf lib/",
+    "build": "cross-env NODE_ENV=production tsc -p ./src",
+    "build:watch": "cross-env NODE_ENV=development tsc -w -p ./src",
     "flow:check": "flow check",
     "flow:status": "flow status",
-    "eslint:check": "eslint --ignore-pattern \"!.eslintrc.js\" .eslintrc.js babel.config.js karma.conf.js flow-typed/*.js src/**/*.js test/**/*.js",
-    "eslint:fix": "eslint --ignore-pattern \"!.eslintrc.js\" --fix .eslintrc.js babel.config.js karma.conf.js flow-typed/*.js src/**/*.js test/**/*.js",
-    "test": "cross-env NODE_ENV=development cross-env BROWSERSLIST=\"current node\" karma start karma.conf.js --single-run",
-    "test:watch": "cross-env NODE_ENV=development cross-env BROWSERSLIST=\"current node\" karma start karma.conf.js --no-single-run",
-    "test:watch:chrome": "cross-env NODE_ENV=development cross-env BROWSERSLIST=\"last 2 Chrome versions\" karma start karma.conf.js --no-single-run --browsers Chrome",
-    "preversion": "npm run eslint:fix && npm run flow:check && npm run test && npm run build",
+    "eslint:check": "eslint --ignore-pattern \"!.eslintrc.js\" .eslintrc.js karma.conf.js src/**/*.ts src/**/*.tsx test/**/*.js test/**/*.ts",
+    "eslint:fix": "eslint --ignore-pattern \"!.eslintrc.js\" --fix .eslintrc.js karma.conf.js src/**/*.ts src/**/*.tsx test/**/*.js test/**/*.ts",
+    "test": "cross-env NODE_ENV=development karma start karma.conf.js --single-run",
+    "test:watch": "cross-env NODE_ENV=development karma start karma.conf.js --no-single-run",
+    "test:watch:chrome": "cross-env NODE_ENV=development cross-env karma start karma.conf.js --no-single-run --browsers Chrome",
+    "preversion": "npm run eslint:fix && npm test && npm run clean && npm run build",
     "version": "npm publish --access=public",
     "postversion": "git push && git push --tags"
   },
@@ -34,31 +35,11 @@
   },
   "homepage": "https://github.com/vlsergey/react-bootstrap-pagination#readme",
   "devDependencies": {
-    "@vlsergey/babel-config": "^0.7.0",
-    "@vlsergey/eslint-config": "^0.7.0",
-    "babel-loader": "^8.1.0",
-    "browserslist": "^4.12.0",
-    "core-js": "^3.6.5",
-    "cross-env": "^7.0.2",
-    "flow-copy-source": "^2.0.9",
-    "jsdom": "^16.2.2",
-    "karma": "^5.1.0",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-jsdom-launcher": "^8.0.2",
-    "karma-mocha": "^2.0.1",
-    "karma-mocha-reporter": "^2.2.5",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^4.0.2",
-    "mocha": "^8.0.1",
-    "prop-types": "^15.7.0",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.0",
-    "react-dom": "^16.13.1",
-    "regenerator-runtime": "^0.13.5",
-    "webpack": "^4.43.0"
+    "@vlsergey/js-config": "^0.1.0",
+    "react-bootstrap": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-bootstrap": "^1.0.0"
+    "react": ">=16.0",
+    "react-bootstrap": ">=1.0"
   }
 }

@@ -91,6 +91,18 @@ class MyComponent extends PureComponent {
 ```
 ![](https://raw.githubusercontent.com/vlsergey/react-bootstrap-pagination/master/doc-images/2of3readOnly.png)
 
+#### Changelog
+Unspecified minor versions are for dependencies updates.
+
+##### 2.0.0
+* ⚡ Move from [flow](https://flow.org/) to [TypeScript](https://www.typescriptlang.org/).
+
+##### 1.0.1
+* 🐛 Fix main file link in `package.json`
+
+##### 1.0.0
+* 🎉 Initial version
+
 [npm-image]: https://img.shields.io/npm/v/@vlsergey/react-bootstrap-pagination.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@vlsergey/react-bootstrap-pagination
 [travis-image]: https://travis-ci.com/vlsergey/react-bootstrap-pagination.svg?branch=master
