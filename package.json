@@ -2,10 +2,11 @@
   "name": "@vlsergey/react-bootstrap-pagination",
   "version": "2.0.0",
   "description": "Ready-to-use wrapper for react-bootstrap Pagation component",
-  "main": "lib/index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "scripts": {
     "clean": "rimraf lib/",
-    "build": "cross-env NODE_ENV=production tsc -p ./src",
+    "build": "cross-env NODE_ENV=production tsc -p ./src/tsconfig-cjs.json && cross-env NODE_ENV=production tsc -p ./src/tsconfig-esm.json",
     "build:watch": "cross-env NODE_ENV=development tsc -w -p ./src",
     "flow:check": "flow check",
     "flow:status": "flow status",

@@ -1,5 +1,3 @@
-// @flow
-
 import React, { PureComponent, ReactNode } from 'react';
 import calcLinksToDisplay from './calcLinksToDisplay';
 import Pagination from 'react-bootstrap/Pagination';
