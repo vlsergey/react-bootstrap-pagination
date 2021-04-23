@@ -11,7 +11,7 @@ interface OnChangeEventType {
   };
 }
 
-interface PropsType {
+interface PropsType extends React.ComponentPropsWithRef<Pagination> {
   aroundCurrent : number;
   atBeginEnd : number;
   disabled? : boolean;
