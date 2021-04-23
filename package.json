@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/vlsergey/react-bootstrap-pagination#readme",
   "devDependencies": {
-    "@vlsergey/js-config": "^0.1.0",
+    "@vlsergey/js-config": "^1.0.0",
     "react-bootstrap": "^1.0.0"
   },
   "peerDependencies": {
