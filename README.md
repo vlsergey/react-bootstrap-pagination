@@ -94,6 +94,10 @@ class MyComponent extends PureComponent {
 # Changelog
 Unspecified minor versions are for dependencies updates.
 
+## 2.2.0
+* 📦 Set target for ESM to ES2020
+* 🛠 Add properties from bootstrap [Pagination](https://react-bootstrap.github.io/components/pagination/) to wrapper props (to allow passed down props like `style`)
+
 ## 2.1.0
 * 📦 Add hybrid CommonJS + ESM packaging.
 
