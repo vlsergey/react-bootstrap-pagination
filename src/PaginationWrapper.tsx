@@ -12,14 +12,14 @@ interface OnChangeEventType {
 }
 
 interface PropsType extends React.ComponentPropsWithRef<Pagination> {
-  aroundCurrent : number;
-  atBeginEnd : number;
+  aroundCurrent? : number;
+  atBeginEnd? : number;
   disabled? : boolean;
-  name : string;
+  name? : string;
   onChange? : ( e: OnChangeEventType ) => unknown;
   readOnly? : boolean;
-  showFirstLast : boolean;
-  showPrevNext : boolean;
+  showFirstLast? : boolean;
+  showPrevNext? : boolean;
   totalPages : number;
   value : number;
 }
