@@ -94,6 +94,9 @@ class MyComponent extends PureComponent {
 # Changelog
 Unspecified minor versions are for dependencies updates.
 
+## 2.2.2
+* 📦 Set target for CommonJS to ES5
+
 ## 2.2.1
 * 🐛 Make optional props optional from TypeScript point of view.
 
