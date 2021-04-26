@@ -37,11 +37,13 @@ export default function calcLinksToDisplay(
     }
   }
 
-  for ( let page = Math.max( totalPages - atBeginEnd, 0 );
-    page <= totalPages - 1;
-    page++ ) {
-    if ( !result.includes( page ) )
-      result.push( page );
+  if ( totalPages !== Number.POSITIVE_INFINITY ) {
+    for ( let page = Math.max( totalPages - atBeginEnd, 0 );
+      page <= totalPages - 1;
+      page++ ) {
+      if ( !result.includes( page ) )
+        result.push( page );
+    }
   }
 
   return result;

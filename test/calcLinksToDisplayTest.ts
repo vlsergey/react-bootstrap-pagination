@@ -40,4 +40,16 @@ describe( 'calcLinksToDisplay', () => {
       calcLinksToDisplay( 10, 7/* 3rd*/, 0, 0, -1 ) );
   } );
 
+  it( 'works for totalPages === Number.POSITIVE_INFINITY', () => {
+    assert.deepEqual( [ 0, 1, -1 ],
+      calcLinksToDisplay( Infinity, 0/* 1st*/, 2, 1, -1 ) );
+    assert.deepEqual( [ 0, 1, -1 ],
+      calcLinksToDisplay( Number.POSITIVE_INFINITY, 0/* 1st*/, 2, 1, -1 ) );
+  } );
+
+  it( 'works for totalPages === Number.NEGATIVE_INFINITY', () => {
+    assert.deepEqual( [],
+      calcLinksToDisplay( Number.NEGATIVE_INFINITY, 0/* 1st*/, 2, 1, -1 ) );
+  } );
+
 } );

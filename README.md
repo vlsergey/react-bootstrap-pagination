@@ -94,6 +94,9 @@ class MyComponent extends PureComponent {
 # Changelog
 Unspecified minor versions are for dependencies updates.
 
+## 2.2.4
+* 🐛 Fixed infinite cycle when `Infinity` (`Number.POSITIVE_INFINITY`) passed as value of `totalPages`
+
 ## 2.2.3
 * 📦 Set target for both CommonJS & ESM to ES5, since WebPack 5 picks ESM and forgot to transpile it with tsc.
 
