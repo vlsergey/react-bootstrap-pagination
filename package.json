@@ -12,6 +12,7 @@
     "flow:status": "flow status",
     "eslint:check": "eslint --ignore-pattern \"!.eslintrc.js\" .eslintrc.js karma.conf.js src/**/*.ts src/**/*.tsx test/**/*.js test/**/*.ts",
     "eslint:fix": "eslint --ignore-pattern \"!.eslintrc.js\" --fix .eslintrc.js karma.conf.js src/**/*.ts src/**/*.tsx test/**/*.js test/**/*.ts",
+    "eslint:watch": "esw --color --watch --ext .js --ext .jsx --ext .ts --ext .tsx --ignore-pattern \"!.eslintrc.js\" --fix *.js src/**/*.ts* test/**/*.js test/**/*.ts*",
     "test": "cross-env NODE_ENV=development karma start karma.conf.js --single-run",
     "test:watch": "cross-env NODE_ENV=development karma start karma.conf.js --no-single-run",
     "test:watch:chrome": "cross-env NODE_ENV=development cross-env karma start karma.conf.js --no-single-run --browsers Chrome",
@@ -36,7 +37,7 @@
   },
   "homepage": "https://github.com/vlsergey/react-bootstrap-pagination#readme",
   "devDependencies": {
-    "@vlsergey/js-config": "^1.0.0",
+    "@vlsergey/js-config": "^8.1.0",
     "react-bootstrap": "^1.0.0"
   },
   "peerDependencies": {

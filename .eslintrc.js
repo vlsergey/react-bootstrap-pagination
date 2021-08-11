@@ -1,13 +1,11 @@
-/* eslint-disable */
-const imported = require( '@vlsergey/js-config' ).eslint;
+/* eslint-disable-next-line */
 module.exports = {
-  ...imported,
   parserOptions: {
-    ...imported,
-    project: [ './tsconfig.json', './src/tsconfig.json', './test/tsconfig.json' ],
+    project: [
+      './tsconfig.json',
+      './src/tsconfig.json',
+      './test/tsconfig.json',
+    ],
   },
-  rules: {
-    ...imported.rules,
-    'import/no-unused-modules': 0,
-  },
+  extends: ['./node_modules/@vlsergey/js-config/src/eslint'],
 };
