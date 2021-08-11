@@ -29,16 +29,16 @@ npm i --save-dev @vlsergey/react-bootstrap-pagination
 # Props
 | Property        | Default value | Description |
 | --------------- |:-------------:| ----------- |
-| **`value`**     | *required*    | Current page. Value is 0-based. user will see +1 value as current.               |
-| **`totalPages`**| *required*    | Total number of pages.                                                           |
-| **`onChange`**  |               | Should be provided if not `readOnly` or `disabled`. See below.                   |
-| `name`          | `'page'`      | Name of component returned in `target` structure in `onChange`.                  |
-| `readOnly`      | `false`       | Allow or do not allow user to change values by clicking on items.                |
+| **`value`**     | *required*    | Current page. Value is 0-based. User will see +1 value as current. |
+| `totalPages`    | `undefined`   | Total number of pages. |
+| **`onChange`**  |               | Should be provided if not `readOnly` or `disabled`. See below. |
+| `name`          | `'page'`      | Name of component returned in `target` structure in `onChange`. |
+| `readOnly`      | `false`       | Allow or do not allow user to change values by clicking on items. |
 | `disabled`      | `false`       | Technically the same as `readOnly`, but may appearance change in future version. |
-| `showFirstLast` | `true`        | Show or hide '<<' and '>>' items ( `<Pagination.First>` and `<Pagination.Last>` )|
-| `showPrevNext`  | `true`        | Show or hide '<' and '>' items  ( `<Pagination.Prev>` and `<Pagination.Next>` )  |
-| `atBeginEnd`    | `2`           | How many first and last pages links to display (in addition to '<<' and '>>')    |
-| `aroundCurrent` | `1`           | How many prev and next linkes to display (in addition to '<<' and '>>')          |
+| `showFirstLast` | `true`        | Show or hide '<<' and '>>' items ( `<Pagination.First>` and `<Pagination.Last>` ) |
+| `showPrevNext`  | `true`        | Show or hide '<' and '>' items  ( `<Pagination.Prev>` and `<Pagination.Next>` ) |
+| `atBeginEnd`    | `2`           | How many first and last pages links to display (in addition to '<<' and '>>') |
+| `aroundCurrent` | `1`           | How many prev and next linkes to display (in addition to '<<' and '>>') |
 
 The argument of `onChange` is event-alike structure with `target` property (with `name` and `value` subproperties). If one stores page number in state he can use same method as for usual form field:
 ```js
@@ -95,6 +95,7 @@ class MyComponent extends PureComponent {
 Undescribed minor versions are for dependencies updates.
 
 ## 3.0.0
+* ✨ Allow `totalPages` to be `undefined`
 * 🔨 Change from class component to function
 * 🔨 Add `strict` option to TypeScript's `compilerOptions`
 * ⬆️ Migrate to js-config 8.1 with new eslint rules

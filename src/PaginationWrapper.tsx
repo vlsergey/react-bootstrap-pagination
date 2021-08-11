@@ -22,7 +22,7 @@ interface PropsType extends React.ComponentPropsWithRef<Pagination> {
   readOnly?: boolean;
   showFirstLast?: boolean;
   showPrevNext?: boolean;
-  totalPages: number;
+  totalPages?: number;
   value: number;
 }
 
@@ -78,7 +78,7 @@ const PaginationWrapper = ({
             ? <Pagination.Item disabled key={p}>{p + 1}</Pagination.Item>
             : <PaginationItemWrapper onClick={handlePage} page={p} />
     ) }
-    { showPrevNext && (value >= totalPages - 1 || allDisabled
+    { showPrevNext && (totalPages !== undefined && value >= totalPages - 1 || allDisabled
       ? <Pagination.Next disabled key="+1" />
       : <Pagination.Next key="+1" onClick={handleNext} />
     ) }
