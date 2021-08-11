@@ -1,6 +1,6 @@
 {
   "name": "@vlsergey/react-bootstrap-pagination",
-  "version": "2.2.4",
+  "version": "3.0.0",
   "description": "Ready-to-use wrapper for react-bootstrap Pagation component",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
