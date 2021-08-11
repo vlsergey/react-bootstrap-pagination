@@ -92,7 +92,13 @@ class MyComponent extends PureComponent {
 ![](https://raw.githubusercontent.com/vlsergey/react-bootstrap-pagination/master/doc-images/2of3readOnly.png)
 
 # Changelog
-Unspecified minor versions are for dependencies updates.
+Undescribed minor versions are for dependencies updates.
+
+## 3.0.0
+* 🔨 Change from class component to function
+* 🔨 Add `strict` option to TypeScript's `compilerOptions`
+* ⬆️ Migrate to js-config 8.1 with new eslint rules
+* 👷 Migrate from TravisCI to GitHub Actions
 
 ## 2.2.4
 * 🐛 Fixed infinite cycle when `Infinity` (`Number.POSITIVE_INFINITY`) passed as value of `totalPages`
