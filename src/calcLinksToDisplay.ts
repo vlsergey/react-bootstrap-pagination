@@ -16,7 +16,7 @@ export default function calcLinksToDisplay (
   }
 
   if (result.length !== 0) {
-    const lastInLinks: number = result[result.length - 1];
+    const lastInLinks: number = result[result.length - 1]!;
     if (lastInLinks < Math.max(currentPage - aroundCurrent, 0) - 1)
       result.push(ellipsisMark);
   } else if (Math.max(currentPage - aroundCurrent, 0) > 0)
@@ -30,7 +30,7 @@ export default function calcLinksToDisplay (
   }
 
   if (result.length !== 0) {
-    const lastInLinks = result[result.length - 1];
+    const lastInLinks = result[result.length - 1]!;
     if (lastInLinks < Math.max(totalPages - atBeginEnd, 0) - 1
       && lastInLinks !== ellipsisMark) {
       result.push(ellipsisMark);
