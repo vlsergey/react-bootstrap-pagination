@@ -40,7 +40,7 @@ const PaginationWrapper = ({
   ...etc
 }: PropsType) => {
 
-  const handleClickF = useCallback((page: number) => (): unknown => {
+  const handleClickF = useCallback((page: number) => {
     if (!onChange) {
       console.warn('onChange() method is not set for PaginationWrapper ("'
           + name + '"), but page change occurs');
