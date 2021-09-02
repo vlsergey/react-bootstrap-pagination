@@ -76,7 +76,7 @@ const PaginationWrapper = ({
           ? <Pagination.Ellipsis disabled key={`_${index}`} />
           : allDisabled
             ? <Pagination.Item disabled key={p}>{p + 1}</Pagination.Item>
-            : <PaginationItemWrapper onClick={handlePage} page={p} />
+            : <PaginationItemWrapper key={p} onClick={handlePage} page={p} />
     ) }
     { showPrevNext && (totalPages !== undefined && value >= totalPages - 1 || allDisabled
       ? <Pagination.Next disabled key="+1" />
