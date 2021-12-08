@@ -94,6 +94,15 @@ class MyComponent extends PureComponent {
 # Changelog
 Undescribed minor versions are for dependencies updates.
 
+## 3.1.0
+* 🎨 Export `PropsType` and `OnChangeEventType` interfaces
+
+## 3.0.2
+* 🐛 Add missing `key` attribute to PaginationItemWrapper in PaginationWrapper
+
+## 3.0.1
+* 🐛 Fixed incorrect implementation of page item click handler
+
 ## 3.0.0
 * ✨ Allow `totalPages` to be `undefined`
 * 🔨 Change from class component to function

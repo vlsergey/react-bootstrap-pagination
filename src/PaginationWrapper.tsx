@@ -6,14 +6,14 @@ import PaginationItemWrapper from './PaginationItemWrapper';
 
 const ELLIPSIS_MARK = -1;
 
-interface OnChangeEventType {
+export interface OnChangeEventType {
   target: {
     name: string;
     value: number;
   };
 }
 
-interface PropsType extends React.ComponentPropsWithRef<Pagination> {
+export interface PropsType extends React.ComponentPropsWithRef<Pagination> {
   aroundCurrent?: number;
   atBeginEnd?: number;
   disabled?: boolean;
