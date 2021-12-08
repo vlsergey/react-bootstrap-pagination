@@ -1,4 +1,4 @@
-import PaginationWrapper, {OnChangeEventType, PropsType} from './PaginationWrapper';
+import PaginationWrapper, {defaultProps, OnChangeEventType, PropsType} from './PaginationWrapper';
 
-export {OnChangeEventType, PropsType};
+export {defaultProps, OnChangeEventType, PropsType};
 export default PaginationWrapper;

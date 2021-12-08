@@ -17,6 +17,7 @@ export interface PropsType extends React.ComponentPropsWithRef<Pagination> {
   aroundCurrent?: number;
   atBeginEnd?: number;
   disabled?: boolean;
+  firstPageValue: number;
   name?: string;
   onChange?: (e: OnChangeEventType) => unknown;
   readOnly?: boolean;
@@ -26,51 +27,62 @@ export interface PropsType extends React.ComponentPropsWithRef<Pagination> {
   value: number;
 }
 
+export const defaultProps = {
+  atBeginEnd: 2,
+  aroundCurrent: 1,
+  firstPageValue: 0,
+  name: 'page',
+  showFirstLast: true,
+  showPrevNext: true,
+};
+
 const PaginationWrapper = ({
-  atBeginEnd = 2,
-  aroundCurrent = 1,
+  atBeginEnd = defaultProps.atBeginEnd,
+  aroundCurrent = defaultProps.aroundCurrent,
   disabled,
-  name = 'page',
+  firstPageValue = defaultProps.firstPageValue,
+  name = defaultProps.name,
   onChange,
   readOnly,
-  showFirstLast = true,
-  showPrevNext = true,
+  showFirstLast = defaultProps.showFirstLast,
+  showPrevNext = defaultProps.showPrevNext,
   totalPages,
   value,
   ...etc
 }: PropsType) => {
 
+  const zeroBasedValue = value - firstPageValue;
   const handleClickF = useCallback((page: number) => {
     if (!onChange) {
-      console.warn('onChange() method is not set for PaginationWrapper ("'
-          + name + '"), but page change occurs');
+      console.warn(`onChange() method is not set for PaginationWrapper ("${name}"), but page change occurs`);
       return;
     }
-    return onChange({target: {name, value: page}});
-  }, [name, onChange]);
+    const toReport: number = page + firstPageValue;
+    return onChange({target: {name, value: toReport}});
+  }, [firstPageValue, name, onChange]);
 
   const handleFirst = useCallback(() => handleClickF(0), [handleClickF]);
-  const handlePrev = useCallback(() => handleClickF(value - 1), [handleClickF, value]);
+  const handlePrev = useCallback(() => handleClickF(zeroBasedValue - 1), [handleClickF, zeroBasedValue]);
   const handlePage = useCallback((page: number) => handleClickF(page), [handleClickF]);
-  const handleNext = useCallback(() => handleClickF(value + 1), [handleClickF, value]);
+  const handleNext = useCallback(() => handleClickF(zeroBasedValue + 1), [handleClickF, zeroBasedValue]);
   const handleLast = useCallback(() => totalPages !== undefined ? handleClickF(totalPages - 1) : undefined, [handleClickF, totalPages]);
 
   const linksToDisplay: number[] = calcLinksToDisplay(
-    totalPages, value, atBeginEnd, aroundCurrent, ELLIPSIS_MARK);
+    totalPages, zeroBasedValue, atBeginEnd, aroundCurrent, ELLIPSIS_MARK);
 
   const allDisabled = disabled || readOnly;
 
   return <Pagination {...etc}>
-    { showFirstLast && (value <= 0 || allDisabled
+    { showFirstLast && (zeroBasedValue <= 0 || allDisabled
       ? <Pagination.First disabled key="-2" />
       : <Pagination.First key="-2" onClick={handleFirst} />
     )}
-    { showPrevNext && (value <= 0 || allDisabled
+    { showPrevNext && (zeroBasedValue <= 0 || allDisabled
       ? <Pagination.Prev disabled key="-1" />
       : <Pagination.Prev key="-1" onClick={handlePrev} />
     ) }
     { linksToDisplay.map((p: number, index: number) =>
-      p === value
+      p === zeroBasedValue
         ? <Pagination.Item active key={p}>{p + 1}</Pagination.Item>
         : p === ELLIPSIS_MARK
           ? <Pagination.Ellipsis disabled key={`_${index}`} />
@@ -78,11 +90,11 @@ const PaginationWrapper = ({
             ? <Pagination.Item disabled key={p}>{p + 1}</Pagination.Item>
             : <PaginationItemWrapper key={p} onClick={handlePage} page={p} />
     ) }
-    { showPrevNext && (totalPages !== undefined && value >= totalPages - 1 || allDisabled
+    { showPrevNext && (totalPages !== undefined && zeroBasedValue >= totalPages - 1 || allDisabled
       ? <Pagination.Next disabled key="+1" />
       : <Pagination.Next key="+1" onClick={handleNext} />
     ) }
-    { totalPages !== undefined && showFirstLast && (value >= totalPages - 1 || allDisabled
+    { totalPages !== undefined && showFirstLast && (zeroBasedValue >= totalPages - 1 || allDisabled
       ? <Pagination.Last disabled key="+2" />
       : <Pagination.Last key="+2" onClick={handleLast} />
     )}

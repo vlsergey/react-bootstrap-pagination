@@ -24,21 +24,22 @@ npm i --save-dev @vlsergey/react-bootstrap-pagination
 
 <Pagination value={5} totalPages={10} onChange={this.handleChange} />
 ```
-*Important note*: value is 0-based.
+*Important note*: value is 0-based unless changed with `firstPageValue`.
 
 # Props
-| Property        | Default value | Description |
-| --------------- |:-------------:| ----------- |
-| **`value`**     | *required*    | Current page. Value is 0-based. User will see +1 value as current. |
-| `totalPages`    | `undefined`   | Total number of pages. |
-| **`onChange`**  |               | Should be provided if not `readOnly` or `disabled`. See below. |
-| `name`          | `'page'`      | Name of component returned in `target` structure in `onChange`. |
-| `readOnly`      | `false`       | Allow or do not allow user to change values by clicking on items. |
-| `disabled`      | `false`       | Technically the same as `readOnly`, but may appearance change in future version. |
-| `showFirstLast` | `true`        | Show or hide '<<' and '>>' items ( `<Pagination.First>` and `<Pagination.Last>` ) |
-| `showPrevNext`  | `true`        | Show or hide '<' and '>' items  ( `<Pagination.Prev>` and `<Pagination.Next>` ) |
-| `atBeginEnd`    | `2`           | How many first and last pages links to display (in addition to '<<' and '>>') |
-| `aroundCurrent` | `1`           | How many prev and next linkes to display (in addition to '<<' and '>>') |
+| Property         | Default value | Description |
+| ---------------- |:-------------:| ----------- |
+| **`value`**      | *required*    | Current page. Value is 0-based unless changed with `firstPageValue`. Displayed page label is `value - firstPageValue + 1`. |
+| `totalPages`     | `undefined`   | Total number of pages. |
+| **`onChange`**   |               | Should be provided if not `readOnly` or `disabled`. See below. |
+| `name`           | `'page'`      | Name of component returned in `target` structure in `onChange`. |
+| `readOnly`       | `false`       | Allow or do not allow user to change values by clicking on items. |
+| `disabled`       | `false`       | Technically the same as `readOnly`, but appearance may change in future versions. |
+| `firstPageValue` | `0`           | Internal value of first page (first page index) used by `value` and `onChange` attributes. Usually `0` (default) or `1`. |
+| `showFirstLast`  | `true`        | Show or hide '<<' and '>>' items ( `<Pagination.First>` and `<Pagination.Last>` ) |
+| `showPrevNext`   | `true`        | Show or hide '<' and '>' items  ( `<Pagination.Prev>` and `<Pagination.Next>` ) |
+| `atBeginEnd`     | `2`           | How many first and last pages links to display (in addition to '<<' and '>>') |
+| `aroundCurrent`  | `1`           | How many prev and next linkes to display (in addition to '<<' and '>>') |
 
 The argument of `onChange` is event-alike structure with `target` property (with `name` and `value` subproperties). If one stores page number in state he can use same method as for usual form field:
 ```js
@@ -93,6 +94,9 @@ class MyComponent extends PureComponent {
 
 # Changelog
 Undescribed minor versions are for dependencies updates.
+
+## 3.2.0
+* 🎨 Allow to change first page value with `firstPageValue` attribute
 
 ## 3.1.0
 * 🎨 Export `PropsType` and `OnChangeEventType` interfaces
