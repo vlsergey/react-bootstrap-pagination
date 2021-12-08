@@ -95,6 +95,9 @@ class MyComponent extends PureComponent {
 # Changelog
 Undescribed minor versions are for dependencies updates.
 
+## 3.2.1
+* 🐛 Make `firstPageValue` optional
+
 ## 3.2.0
 * 🎨 Allow to change first page value with `firstPageValue` attribute
 

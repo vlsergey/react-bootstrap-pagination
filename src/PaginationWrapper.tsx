@@ -17,7 +17,7 @@ export interface PropsType extends React.ComponentPropsWithRef<Pagination> {
   aroundCurrent?: number;
   atBeginEnd?: number;
   disabled?: boolean;
-  firstPageValue: number;
+  firstPageValue?: number;
   name?: string;
   onChange?: (e: OnChangeEventType) => unknown;
   readOnly?: boolean;
