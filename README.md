@@ -3,7 +3,7 @@
 Ready-to-use wrapper for react-bootstrap Pagation component.
 
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![Downloads][downloads-image]][downloads-url]
 
 # Goal
@@ -148,7 +148,7 @@ Undescribed minor versions are for dependencies updates.
 
 [npm-image]: https://img.shields.io/npm/v/@vlsergey/react-bootstrap-pagination.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@vlsergey/react-bootstrap-pagination
-[travis-image]: https://travis-ci.com/vlsergey/react-bootstrap-pagination.svg?branch=master
-[travis-url]: https://travis-ci.com/vlsergey/react-bootstrap-pagination
+[build-image]: https://github.com/vlsergey/react-bootstrap-pagination/actions/workflows/node.js.yml/badge.svg
+[build-url]: https://github.com/vlsergey/react-bootstrap-pagination/actions/workflows/node.js.yml
 [downloads-image]: http://img.shields.io/npm/dm/@vlsergey/react-bootstrap-pagination.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/@vlsergey/react-bootstrap-pagination
